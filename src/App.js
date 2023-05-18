@@ -50,9 +50,8 @@ function App() {
     <>
       <nav className="navbar bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand">
-            <h3  >{"Total " + totalCount}</h3>
-          </a>
+             <h3  >{"Total " + totalCount}</h3>
+         
           <div className="d-flex">
             <Button onClick={addRow}>Add</Button>
           </div>
