@@ -1,5 +1,5 @@
 export default function TextField(props) {
   return (
-    <input onChange={props.onChange} type="number" value={props.value}></input>
+    <input className="col-sm-3 m-2 form-control" onChange={props.onChange} type="number" value={props.value}></input>
   );
 }

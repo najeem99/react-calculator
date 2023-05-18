@@ -1,0 +1,12 @@
+.operator-dropdown{
+    width: 30px;
+}
+input,
+select,
+textarea {
+    max-width: 150px !important;
+}
+
+button{
+    min-width: 100px;
+}

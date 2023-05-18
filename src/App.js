@@ -3,16 +3,17 @@ import { useEffect } from "react";
 import ListGroup from "./components/ListGroup";
 import Button from "./components/Button";
 
-let newEntryObject = {
-  operator: "+",
-  value: "",
-  isDisabled: false,
-};
-
 function App() {
   //to add new row
   const addRow = () => {
-    setItems((items) => [...items, JSON.parse(JSON.stringify(newEntryObject))]);
+    setItems((items) => [
+      ...items,
+      {
+        operator: "1",
+        value: "",
+        isDisabled: false,
+      },
+    ]);
     console.log(items);
   };
 
@@ -31,29 +32,41 @@ function App() {
     console.log("onDisable", temp);
   };
 
-  const [items, setItems] = useState([newEntryObject]);
+  const [items, setItems] = useState([{operator: "1",value: "",isDisabled: false,}]);
   const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     let count = 0;
     items.forEach((x) => {
       if (!x.isDisabled) {
-        count = x.operator === "+" ? count + x.value : count - x.value;
+        console.log(x.operator === "1" ,x.operator);
+         count = x.operator === "1" ? count + x.value : count - x.value;
       }
     });
     setTotalCount(count);
   }, [items]);
 
   return (
-    <div>
-      <h1>{"Total " + totalCount}</h1>
-      <ListGroup
-        items={items}
-        onValueChange={onValueChange}
-        onClickDelete={onDelete}
-      ></ListGroup>
-      <Button onClick={addRow}>Add</Button>
-    </div>
+    <>
+      <nav className="navbar bg-body-tertiary">
+        <div className="container">
+          <a className="navbar-brand">
+            <h3>{"Total " + totalCount}</h3>
+          </a>
+          <div className="d-flex">
+            <Button onClick={addRow}>Add</Button>
+          </div>
+        </div>
+      </nav>
+
+      <div>
+        <ListGroup
+          items={items}
+          onValueChange={onValueChange}
+          onClickDelete={onDelete}
+        ></ListGroup>
+      </div>
+    </>
   );
 }
 
