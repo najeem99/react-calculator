@@ -1,4 +1,5 @@
-# Demo [Create React App]([https://github.com/facebook/create-react-app](https://react-calculator-theta-nine.vercel.app/)).
+# Demo [React Calculator](https://react-calculator-theta-nine.vercel.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
