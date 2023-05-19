@@ -6,7 +6,7 @@ function ListGroup(props) {
     <>
       <div className="container">
             {props.items.map((items, index) => (
-            <div  style={{ backgroundColor: items.isDisabled ? "#00000050" : "white" }}  key={items + index} className="row  p-1 px-4 border d-flex align-items-center justify-content-center">
+            <div  style={{ backgroundColor: items.isDisabled ? "#00000030" : "white" }}  key={items + index} className="row my-1 p-1 px-4 border d-flex align-items-center justify-content-center">
               <Dropdown
                 onChange={(e) =>props.onValueChange(e.target.value, "operator", index)}>
                 {items}
@@ -16,8 +16,10 @@ function ListGroup(props) {
               {items}
               </TextField>
               <Button 
+              buttonStyle={"btn-warning"}
               onClick={() => props.onClickDelete(index)}>Delete</Button>
               <Button
+              buttonStyle={"btn-warning"}
                 onClick={() =>props.onValueChange(!items.isDisabled, "isDisabled", index)}>
                 Disable
               </Button>

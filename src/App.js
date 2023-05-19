@@ -10,7 +10,7 @@ function App() {
       ...items,
       {
         operator: "1",
-        value: "",
+        value: '',
         isDisabled: false,
       },
     ]);
@@ -22,12 +22,15 @@ function App() {
     const temp = [...items];
     temp[index][variable] = valueTobeChanged;
     setItems(temp);
-    console.log("ietmsmdnfs", items);
-  };
+   };
 
   //to delete row
   const onDelete = (index) => {
-    const temp = items.filter((item, cindex) => cindex !== index);
+    console.log(index)
+    const temp = [...items]
+    temp.splice(index, 1);
+    console.log(temp)
+   // const temp = items.filter((item, cindex) => cindex !== index);
     setItems(temp);
     console.log("onDisable", temp);
   };
@@ -48,17 +51,18 @@ function App() {
 
   return (
     <>
-      <nav className="navbar bg-body-tertiary">
+
+      <nav   className="navbar bg-body-tertiary fixed-top-nav mb-2">
         <div className="container">
-             <h3  >{"Total " + totalCount}</h3>
+             <h3 className="total-text"  >{"Total " + totalCount}</h3>
          
           <div className="d-flex">
-            <Button onClick={addRow}>Add</Button>
+            <Button buttonStyle={"btn-light"} onClick={addRow}>Add</Button>
           </div>
         </div>
       </nav>
 
-      <div>
+      <div className="main-body">
         <ListGroup
           items={items}
           onValueChange={onValueChange}
