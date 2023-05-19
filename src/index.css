@@ -1,0 +1,42 @@
+:root{
+    overflow: hidden;
+}
+.operator-dropdown {
+  width: 30px;
+}
+input,
+select,
+textarea {
+  max-width: 150px !important;
+}
+
+button {
+  min-width: 100px;
+}
+.row {
+  border-radius: 10px;
+}
+.fixed-top-nav {
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.navbar {
+  background-color: #ffa500;
+  height: 9vh;
+}
+.main-body {
+  height: 90vh;
+  overflow: auto;
+}
+.total-text{
+    color: white;
+}
+.btn-warning{
+    font-weight: 600 !important;
+}
+.btn-light{
+    font-weight: 600 !important;
+    color: #ffa500 !important;
+}
